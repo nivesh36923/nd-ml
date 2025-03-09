@@ -104,7 +104,7 @@ ax2.set_xlabel('Date')
 ax2.set_ylabel('Close ($)')
 
 # Rotate x-axis labels for better readability
-ax2.xticks(rotation=45)
+ax2.set_xticklabels(rotation=45)
 
 # Add legend
 ax2.legend()
