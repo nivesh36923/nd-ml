@@ -63,15 +63,14 @@ train,test= df.iloc[:train_size],df.iloc[train_size:]
 
 X_train, y_train = train.drop(['Date','Stock_1','Stock_2','Stock_3','Stock_4','Stock_5'], axis=1), train['Stock_1']
 X_test, y_test = test.drop(['Date','Stock_1','Stock_2','Stock_3','Stock_4','Stock_5'], axis=1), test['Stock_1']
-print(X_train,y_train)
-print(X_test,y_test)
+
 
 
 model = xgb.XGBRegressor(objective='reg:squarederror', n_estimators=100, learning_rate=0.1, max_depth=3)
 model.fit(X_train, y_train)
 
 
-# y_pred = model.predict(X_test)
+y_pred = model.predict(X_test)
 
 
 mse = mean_squared_error(y_test, y_pred)
@@ -80,9 +79,13 @@ st.info(f"Mean Squared Error: {mse:.4f}")
 
 
 X_combined = pd.concat([X_train, X_test], ignore_index=True)
+with st.expander('X_combined'):
+  X_combined
 predictions = model.predict(X_combined)
 pred_df = pd.DataFrame(predictions)
 y_combined = pd.concat([y_train, y_test], ignore_index=True)
+with st.expander('y_combined'):
+  y_combined
 with st.expander('y_train'):
   y_train
 with st.expander('pred_df'):
