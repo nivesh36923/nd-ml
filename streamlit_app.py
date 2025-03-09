@@ -26,23 +26,17 @@ with st.expander('Y'):
   Y
 
 '''plot of the following data'''
-plt.figure(figsize=(12, 6))
 
+ax.plot(df['Date'], df['Stock_1'], label='Stock_1 ($)', color='red')
+ax.plot(df['Date'], df['Stock_2'], label='Stock_2 ($)', color='blue')
+ax.plot(df['Date'], df['Stock_3'], label='Stock_3 ($)', color='green')
+ax.plot(df['Date'], df['Stock_4'], label='Stock_4 ($)', color='yellow')
+ax.plot(df['Date'], df['Stock_5'], label='Stock_5 ($)', color='black')
 
-plt.plot(df['Date'], df['Stock_1'], label='Stock_1 ($)', color='red')
-plt.plot(df['Date'], df['Stock_2'], label='Stock_2 ($)', color='blue')
-plt.plot(df['Date'], df['Stock_3'], label='Stock_3 ($)', color='green')
-plt.plot(df['Date'], df['Stock_4'], label='Stock_4 ($)', color='yellow')
-plt.plot(df['Date'], df['Stock_5'], label='Stock_5 ($)', color='black')
+ax.set_title('Stock Prices between 2020-01-01 and 2020-12-30')
+ax.set_xlabel('Date')
+ax.set_ylabel('Close ($)')
+ax.legend()
 
-
-plt.title('Stock Prices between 2020-01-01 and 2020-12-30')
-plt.xlabel('Date')
-plt.ylabel('Close ($)')
-
-
-plt.legend()
-
-# Show the plot
-plt.show()
-  
+# Display the plot in Streamlit
+st.pyplot(fig)
