@@ -3,27 +3,19 @@ import pandas as pd
 
 st.title('Stock_Prediction_Price')
 
-st.info('here is data')
+st.info('Some Details of the price')
 
 
 with st.expander('Data'):
   st.write('***Raw Date***')
-  df = pd.read_csv('https://raw.githubusercontent.com/dataprofessor/data/master/penguins_cleaned.csv')
+  df = pd.read_csv('https://github.com/nivesh36923/nd-ml/blob/master/stock_data.csv')
   df
 
 with st.expander('X'):
-  X=df.drop('species',axis=1)
+  X=df['Date']
   X
 with st.expander('Y'):
-  Y=df.species
+  Y=df.drop('Date',axis=1)
   Y
 
-with st.expander('Data visualization'):
-  st.scatter_chart(data=df, x='bill_length_mm', y='body_mass_g', color='species')
-# data preparation 
-with st.sidebar:
-  st.header('input features')
-  island=st.selectbox('island', ('Biscoe', 'Drean','Torgersen' ))
-  gender=st.selectbox('gender', ('male','female'))
-  bill_length_m = st.slider('Bill length (mn)', 32.1, 59.6, 43.9)
   
