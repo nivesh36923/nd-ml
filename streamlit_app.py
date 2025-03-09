@@ -26,6 +26,7 @@ with st.expander('Y'):
   Y
 
 '''plot of the following data'''
+fig, ax = plt.subplots(figsize=(12, 6))
 
 ax.plot(df['Date'], df['Stock_1'], label='Stock_1 ($)', color='red')
 ax.plot(df['Date'], df['Stock_2'], label='Stock_2 ($)', color='blue')
