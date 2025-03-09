@@ -103,6 +103,7 @@ ax2.set_title('Stock Prices between 2020-01-01 and 2020-01-30')
 ax2.set_xlabel('Date')
 ax2.set_ylabel('Close ($)')
 
+ax2.tick_params(axis='x', rotation=45)
 
 # Add legend
 ax2.legend()
