@@ -1,9 +1,9 @@
 import streamlit as st
 import pandas as pd
 
-st.title('👽MACHINE LEARNING')
+st.title('Stock_Prediction_Price')
 
-st.info('hey! This is L')
+st.info('here is data')
 
 
 with st.expander('Data'):
