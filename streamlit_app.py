@@ -10,7 +10,7 @@ with st.expander('Data'):
   st.write('***Raw Date***')
   df = pd.read_csv("https://raw.githubusercontent.com/nivesh36923/nd-ml/master/stock_data.csv")
   df
-
+df=df.rename(columns={'Unnamed: 0':'Date'})
 with st.expander('X'):
   X=df['Date']
   X
