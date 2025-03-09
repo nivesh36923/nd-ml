@@ -3,7 +3,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import sklearn
-from sklearn import mean_squared_error as mse
+from sklearn.metrics import mean_squared_error as mse
 import xgboost as xgb
 from sklearn.preprocessing import LabelEncoder
 
