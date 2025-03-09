@@ -85,7 +85,7 @@ pred_df = pd.DataFrame(predictions)
 y_combined = pd.concat([y_train, y_test], ignore_index=True)
 with st.expander('y_train'):
   y_train
-with st.expander('pred_df')
+with st.expander('pred_df'):
   pred_df
 
 
