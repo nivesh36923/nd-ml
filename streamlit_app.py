@@ -14,9 +14,9 @@ st.info('Some Details of the price')
 
 with st.expander('Data'):
   st.write('***Raw Date***')
+  df = pd.read_csv("https://raw.githubusercontent.com/nivesh36923/nd-ml/master/stock_data.csv")
   df=df.rename(columns={'Unnamed: 0':'Date'})
   df['Date'] = pd.to_datetime(df['Date'])
-  df = pd.read_csv("https://raw.githubusercontent.com/nivesh36923/nd-ml/master/stock_data.csv")
   df
 
 with st.expander('X'):
